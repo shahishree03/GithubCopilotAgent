@@ -2,15 +2,53 @@
   "id": "my-copilot-plugin",
   "name": "My Copilot Plugin",
   "version": "0.1.0",
-  "description": "A custom plugin for GitHub Copilot",
+  "description": "A custom plugin for GitHub Copilot that enhances code suggestions",
   "main": "dist/index.js",
   "engines": {
     "copilot-agent": "^1.0.0"
   },
   "capabilities": [
-    "commands"
+    "commands",
+    "codeProcessing"
   ],
   "activationEvents": [
-    "onCommand:my-plugin.helloWorld"
-  ]
+    "onCommand:my-plugin.helloWorld",
+    "onCommand:my-plugin.generateComponent",
+    "onCommand:my-plugin.processCode",
+    "onCopilotSuggestion"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "my-plugin.helloWorld",
+        "title": "Hello World",
+        "description": "Simple test command"
+      },
+      {
+        "command": "my-plugin.generateComponent",
+        "title": "Generate Component",
+        "description": "Generate a new component based on the provided name"
+      },
+      {
+        "command": "my-plugin.processCode",
+        "title": "Process Code",
+        "description": "Process and enhance the selected code"
+      }
+    ],
+    "configuration": {
+      "title": "My Copilot Plugin",
+      "properties": {
+        "myCopilotPlugin.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the plugin"
+        },
+        "myCopilotPlugin.enhanceComments": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable enhanced comments in code suggestions"
+        }
+      }
+    }
+  }
 }
