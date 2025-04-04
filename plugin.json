@@ -1,0 +1,16 @@
+{
+  "id": "my-copilot-plugin",
+  "name": "My Copilot Plugin",
+  "version": "0.1.0",
+  "description": "A custom plugin for GitHub Copilot",
+  "main": "dist/index.js",
+  "engines": {
+    "copilot-agent": "^1.0.0"
+  },
+  "capabilities": [
+    "commands"
+  ],
+  "activationEvents": [
+    "onCommand:my-plugin.helloWorld"
+  ]
+}
