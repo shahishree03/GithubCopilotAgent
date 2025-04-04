@@ -3,7 +3,7 @@ import { CopilotAgentPlugin, CopilotAgentPluginContext } from './types/copilot-a
 import { registerHelloWorldCommand } from './commands/helloWorld';
 import { registerGenerateComponentCommand } from './commands/generatecomponent';
 import { registerProcessCodeCommand } from './commands/processCode';
-import { loadConfig } from './config/pluginConfig';
+import { loadConfig } from './config/pluginCOnfig';
 import { registerEventListeners } from './events/listeners';
 
 export class MyCopilotPlugin implements CopilotAgentPlugin {
